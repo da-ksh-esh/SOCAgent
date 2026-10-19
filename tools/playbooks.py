@@ -3,7 +3,6 @@ from __future__ import annotations
 
 from tools.enrichment import is_external
 
-PHASE_ORDER = ["identify", "preserve_evidence", "contain", "eradicate", "recover", "lessons_learned"]
 REQUIRED_PHASES = ["preserve_evidence", "contain", "eradicate", "recover"]
 
 

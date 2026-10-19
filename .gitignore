@@ -8,7 +8,6 @@ env/
 
 # Runtime state (created by the console)
 memory/
-runs/
 
 # Local tooling and OS files
 .claude/

@@ -18,7 +18,6 @@ from core.trace import Tracer
 from tools.enrichment import (anomaly_reasons, asset_get, hunt_indicator, indicators, is_external,
                               threat_intel_lookup, user_baseline)
 
-TOOLS = ("threat_intel.lookup", "assets.get", "users.baseline", "hunt.indicator")
 SUSPICIOUS_SEVERITY = {"medium", "high", "critical"}
 
 

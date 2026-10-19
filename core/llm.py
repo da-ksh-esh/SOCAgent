@@ -232,14 +232,6 @@ def warm_up(model: str, host: str = OLLAMA_HOST) -> None:
         pass
 
 
-def ollama_available(host: str = OLLAMA_HOST) -> bool:
-    try:
-        with urllib.request.urlopen(f"{host}/api/tags", timeout=1):
-            return True
-    except Exception:
-        return False
-
-
 def ollama_models(host: str = OLLAMA_HOST) -> list[str]:
     """Models pulled into the local Ollama server (empty if it is not running)."""
     try:
