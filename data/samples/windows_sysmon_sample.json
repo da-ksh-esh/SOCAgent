@@ -1,0 +1,224 @@
+[
+  {
+    "@timestamp": "2026-10-15T03:12:00.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:12:30.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:13:00.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:13:30.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:14:00.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:14:30.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:15:00.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:15:30.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10,
+    "Status": "0xc000006a"
+  },
+  {
+    "@timestamp": "2026-10-15T03:17:00.000Z",
+    "EventID": 4624,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "administrator",
+    "IpAddress": "45.155.205.233",
+    "LogonType": 10
+  },
+  {
+    "@timestamp": "2026-10-15T03:20:00.000Z",
+    "EventID": 4732,
+    "Channel": "Security",
+    "Computer": "SRV-WEB01.corp.local",
+    "TargetUserName": "Administrators",
+    "SubjectUserName": "administrator",
+    "MemberName": "CN=svc_sync,CN=Users,DC=corp,DC=local"
+  },
+  {
+    "@timestamp": "2026-10-15T10:02:00.000Z",
+    "EventID": 4625,
+    "Channel": "Security",
+    "Computer": "WS-HR02.corp.local",
+    "TargetUserName": "vikram.r",
+    "IpAddress": "-",
+    "LogonType": 2
+  },
+  {
+    "@timestamp": "2026-10-15T10:02:20.000Z",
+    "EventID": 4624,
+    "Channel": "Security",
+    "Computer": "WS-HR02.corp.local",
+    "TargetUserName": "vikram.r",
+    "IpAddress": "-",
+    "LogonType": 2
+  },
+  {
+    "@timestamp": "2026-10-15T11:15:00.000Z",
+    "EventID": 4624,
+    "Channel": "Security",
+    "Computer": "SRV-DB01.corp.local",
+    "TargetUserName": "it_admin",
+    "IpAddress": "10.0.9.5",
+    "LogonType": 3
+  },
+  {
+    "@timestamp": "2026-10-15T11:30:00.000Z",
+    "EventID": 22,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "SRV-DB01.corp.local",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "QueryName": "updates.microsoft.com"
+  },
+  {
+    "@timestamp": "2026-10-15T13:40:00.000Z",
+    "EventID": 15,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "WS-MKT07.corp.local",
+    "User": "CORP\\priya.s",
+    "TargetFilename": "C:\\Users\\priya.s\\Downloads\\invoice_viewer.exe",
+    "Hash": "SHA256=CF24FD667455692401A9DDAD494847A2BA892DBC0564C6950FB4E30CB3ABAED2",
+    "Contents": "[ZoneTransfer] ZoneId=3 HostUrl=https://secure-login-update.com/inv"
+  },
+  {
+    "@timestamp": "2026-10-15T13:48:00.000Z",
+    "EventID": 22,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "WS-MKT07.corp.local",
+    "User": "CORP\\priya.s",
+    "QueryName": "cdn-sync-update.net"
+  },
+  {
+    "@timestamp": "2026-10-15T13:53:00.000Z",
+    "EventID": 22,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "WS-MKT07.corp.local",
+    "User": "CORP\\priya.s",
+    "QueryName": "cdn-sync-update.net"
+  },
+  {
+    "@timestamp": "2026-10-15T13:58:00.000Z",
+    "EventID": 22,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "WS-MKT07.corp.local",
+    "User": "CORP\\priya.s",
+    "QueryName": "cdn-sync-update.net"
+  },
+  {
+    "@timestamp": "2026-10-15T14:03:00.000Z",
+    "EventID": 22,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "WS-MKT07.corp.local",
+    "User": "CORP\\priya.s",
+    "QueryName": "cdn-sync-update.net"
+  },
+  {
+    "@timestamp": "2026-10-15T14:08:00.000Z",
+    "EventID": 22,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "WS-MKT07.corp.local",
+    "User": "CORP\\priya.s",
+    "QueryName": "cdn-sync-update.net"
+  },
+  {
+    "@timestamp": "2026-10-15T22:05:00.000Z",
+    "EventID": 10,
+    "Channel": "Microsoft-Windows-Sysmon/Operational",
+    "Computer": "WS-ENG11.corp.local",
+    "SourceImage": "C:\\Users\\arjun.p\\AppData\\Local\\Temp\\pd64.exe",
+    "TargetImage": "C:\\Windows\\system32\\lsass.exe",
+    "GrantedAccess": "0x1410",
+    "User": "CORP\\arjun.p",
+    "Hashes": "SHA1=0,MD5=0,SHA256=68D04997C2F214A3386E0006867D8D583C79B6A70B02729632300D9A2B46E14F"
+  },
+  {
+    "@timestamp": "2026-10-15T22:16:00.000Z",
+    "EventID": 4624,
+    "Channel": "Security",
+    "Computer": "SRV-BKP01.corp.local",
+    "TargetUserName": "arjun.p",
+    "IpAddress": "10.0.5.11",
+    "LogonType": 3
+  },
+  {
+    "@timestamp": "2026-10-15T22:18:00.000Z",
+    "EventID": 7045,
+    "Channel": "System",
+    "Computer": "SRV-BKP01.corp.local",
+    "ServiceName": "PSEXESVC",
+    "ImagePath": "%SystemRoot%\\PSEXESVC.exe",
+    "TargetUserName": "arjun.p",
+    "IpAddress": "10.0.5.11"
+  },
+  {
+    "@timestamp": "2026-10-15T22:26:00.000Z",
+    "EventID": 4624,
+    "Channel": "Security",
+    "Computer": "SRV-DC01.corp.local",
+    "TargetUserName": "arjun.p",
+    "IpAddress": "10.0.1.50",
+    "LogonType": 3
+  }
+]

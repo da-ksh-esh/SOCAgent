@@ -1,0 +1,92 @@
+{
+  "SRV-DC01": {
+    "owner": "IT Infrastructure",
+    "role": "Domain controller",
+    "criticality": "crown_jewel",
+    "ip": "10.0.1.10"
+  },
+  "SRV-DB01": {
+    "owner": "Data Platform",
+    "role": "Customer database",
+    "criticality": "crown_jewel",
+    "ip": "10.0.1.20"
+  },
+  "SRV-APP01": {
+    "owner": "App Engineering",
+    "role": "Internal application server",
+    "criticality": "high",
+    "ip": "10.0.1.30"
+  },
+  "SRV-WEB01": {
+    "owner": "App Engineering",
+    "role": "Public web server",
+    "criticality": "high",
+    "ip": "10.0.1.40"
+  },
+  "SRV-BKP01": {
+    "owner": "IT Infrastructure",
+    "role": "Backup server",
+    "criticality": "high",
+    "ip": "10.0.1.50"
+  },
+  "FIN-WS01": {
+    "owner": "Finance",
+    "role": "Finance workstation",
+    "criticality": "high",
+    "ip": "10.0.3.11"
+  },
+  "FIN-WS03": {
+    "owner": "Finance",
+    "role": "Finance workstation",
+    "criticality": "high",
+    "ip": "10.0.3.13"
+  },
+  "WS-MKT07": {
+    "owner": "Marketing",
+    "role": "User workstation",
+    "criticality": "medium",
+    "ip": "10.0.4.17"
+  },
+  "WS-HR02": {
+    "owner": "Human Resources",
+    "role": "User workstation",
+    "criticality": "medium",
+    "ip": "10.0.4.22"
+  },
+  "WS-ENG11": {
+    "owner": "Engineering",
+    "role": "User workstation",
+    "criticality": "low",
+    "ip": "10.0.5.11"
+  },
+  "WS-ENG12": {
+    "owner": "Engineering",
+    "role": "User workstation",
+    "criticality": "low",
+    "ip": "10.0.5.12"
+  },
+  "WS-ENG13": {
+    "owner": "Engineering",
+    "role": "User workstation",
+    "criticality": "low",
+    "ip": "10.0.5.13"
+  },
+  "WS-ENG14": {
+    "owner": "Engineering",
+    "role": "User workstation",
+    "criticality": "low",
+    "ip": "10.0.5.14"
+  },
+  "WS-SALES04": {
+    "owner": "Sales",
+    "role": "User workstation",
+    "criticality": "low",
+    "ip": "10.0.6.4"
+  },
+  "SCN-01": {
+    "owner": "Security",
+    "role": "Vulnerability scanner",
+    "criticality": "low",
+    "ip": "10.0.0.5"
+  }
+}

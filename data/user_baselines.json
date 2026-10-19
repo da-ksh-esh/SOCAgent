@@ -1,0 +1,125 @@
+{
+  "administrator": {
+    "usual_hosts": [
+      "SRV-APP01",
+      "SRV-WEB01",
+      "SRV-DC01"
+    ],
+    "work_hours": [
+      8,
+      19
+    ]
+  },
+  "it_admin": {
+    "usual_hosts": [
+      "SRV-DC01",
+      "SRV-DB01",
+      "SRV-APP01",
+      "SRV-WEB01",
+      "SRV-BKP01"
+    ],
+    "work_hours": [
+      7,
+      21
+    ]
+  },
+  "priya.s": {
+    "usual_hosts": [
+      "WS-MKT07"
+    ],
+    "work_hours": [
+      8,
+      20
+    ]
+  },
+  "rahul.k": {
+    "usual_hosts": [
+      "FIN-WS03"
+    ],
+    "work_hours": [
+      9,
+      19
+    ]
+  },
+  "anita.m": {
+    "usual_hosts": [
+      "FIN-WS01"
+    ],
+    "work_hours": [
+      9,
+      19
+    ]
+  },
+  "vikram.r": {
+    "usual_hosts": [
+      "WS-HR02"
+    ],
+    "work_hours": [
+      9,
+      19
+    ]
+  },
+  "arjun.p": {
+    "usual_hosts": [
+      "WS-ENG11"
+    ],
+    "work_hours": [
+      9,
+      21
+    ]
+  },
+  "neha.k": {
+    "usual_hosts": [
+      "WS-ENG12"
+    ],
+    "work_hours": [
+      9,
+      21
+    ]
+  },
+  "sameer.d": {
+    "usual_hosts": [
+      "WS-ENG13"
+    ],
+    "work_hours": [
+      9,
+      21
+    ]
+  },
+  "kavya.n": {
+    "usual_hosts": [
+      "WS-ENG14"
+    ],
+    "work_hours": [
+      9,
+      21
+    ]
+  },
+  "rohan.b": {
+    "usual_hosts": [
+      "WS-SALES04"
+    ],
+    "work_hours": [
+      8,
+      20
+    ]
+  },
+  "svc_backup": {
+    "usual_hosts": [
+      "SRV-BKP01"
+    ],
+    "work_hours": [
+      0,
+      24
+    ]
+  },
+  "svc_scanner": {
+    "usual_hosts": [
+      "SCN-01"
+    ],
+    "work_hours": [
+      0,
+      24
+    ]
+  }
+}

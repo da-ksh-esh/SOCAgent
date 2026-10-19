@@ -1,0 +1,9 @@
+langgraph>=1.0,<2
+fastapi>=0.110
+uvicorn>=0.29
+reportlab>=4.0
+pyyaml>=6.0
+pysigma>=1.0,<2
+pysigma-backend-splunk>=2.0,<3
+pysigma-backend-elasticsearch>=2.0,<3
+pytest>=8.0

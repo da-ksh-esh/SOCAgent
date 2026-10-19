@@ -1,0 +1,66 @@
+{
+  "185.220.101.45": {
+    "reputation": "malicious",
+    "note": "Known brute-force source (Tor exit / botnet)"
+  },
+  "45.155.205.233": {
+    "reputation": "malicious",
+    "note": "Known brute-force source (Tor exit / botnet)"
+  },
+  "secure-login-update.com": {
+    "reputation": "malicious",
+    "note": "Credential phishing domain, registered days ago"
+  },
+  "docs-review-share.net": {
+    "reputation": "malicious",
+    "note": "Credential phishing domain, registered days ago"
+  },
+  "cdn-sync-update.net": {
+    "reputation": "malicious",
+    "note": "Command-and-control domain (commodity RAT)"
+  },
+  "telemetry-edge-cdn.org": {
+    "reputation": "malicious",
+    "note": "Command-and-control domain (commodity RAT)"
+  },
+  "cf24fd667455692401a9ddad494847a2ba892dbc0564c6950fb4e30cb3abaed2": {
+    "reputation": "malicious",
+    "note": "Remote access trojan dropper"
+  },
+  "f1046a319b12259fa49c9e5f4423a05c82f9ead6be751e803b5b57c85b852fb3": {
+    "reputation": "malicious",
+    "note": "Remote access trojan dropper"
+  },
+  "0f784b696dba554ade223057ca904ed62fc034ef188c77c2ba919b3ed76b8942": {
+    "reputation": "malicious",
+    "note": "Credential dumping tool"
+  },
+  "68d04997c2f214a3386e0006867d8d583c79b6a70b02729632300d9a2b46e14f": {
+    "reputation": "malicious",
+    "note": "Credential dumping tool"
+  },
+  "45.95.168.12": {
+    "reputation": "suspicious",
+    "note": "Bulletproof hosting range, seen in data-theft cases"
+  },
+  "193.29.13.92": {
+    "reputation": "suspicious",
+    "note": "Bulletproof hosting range, seen in data-theft cases"
+  },
+  "10.0.0.5": {
+    "reputation": "benign",
+    "note": "Internal vulnerability scanner (allow-listed)"
+  },
+  "52.95.110.1": {
+    "reputation": "benign",
+    "note": "Corporate cloud backup endpoint"
+  },
+  "updates.microsoft.com": {
+    "reputation": "benign",
+    "note": "Vendor update service"
+  },
+  "f732ee46b36d824a146ef401a0df87498d835860e632696916851c73aad1b0fe": {
+    "reputation": "benign",
+    "note": "Signed vendor installer"
+  }
+}

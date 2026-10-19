@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Runtime state (created by the console)
+memory/
+runs/
+
+# Local tooling and OS files
+.claude/
+.env
+*.log
+.DS_Store
+Thumbs.db

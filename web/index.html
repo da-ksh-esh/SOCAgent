@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOC//AGENT: multi-agent alert triage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css?v=7">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="SOC//AGENT home">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 5 L39 11 V24 C39 33.5 32.5 40 24 43 C15.5 40 9 33.5 9 24 V11 Z" class="shield"/>
+        <path d="M17.5 24.5 L22.5 29.5 L31 19.5" class="tick"/>
+      </svg>
+      <span class="brand-title">SOC//AGENT</span>
+    </a>
+    <nav class="tabs" id="tabs" aria-label="Views">
+      <button data-view="console" class="active">Console</button>
+      <button data-view="incidents" disabled>Incidents</button>
+      <button data-view="detail" disabled>Detail</button>
+      <button data-view="attack" disabled>ATT&amp;CK</button>
+      <button data-view="response" disabled>Response</button>
+      <button data-view="reports" disabled>Reports</button>
+      <button data-view="eval" disabled>Eval</button>
+      <button data-view="benchmark">Benchmark</button>
+      <button data-view="memory">Memory</button>
+      <button data-view="ask" disabled>Ask</button>
+    </nav>
+    <div class="nav-right">
+      <button class="ghost-btn" id="arch-btn">Diagram</button>
+      <div class="status-pill" id="sys-status" role="status"><span class="dot"></span><span class="txt">Idle</span></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="frame" aria-label="Overview and run setup">
+      <div class="frame-hero">
+        <div class="hero-copy">
+          <h1 class="headline" aria-label="Six agents. One graph. No alert fatigue.">
+            <span class="line"><span>Six agents.</span></span>
+            <span class="line"><span>One graph.</span></span>
+            <span class="strike" aria-hidden="true"></span>
+            <span class="line"><span>No alert</span></span>
+            <span class="line"><span>fatigue.</span></span>
+          </h1>
+          <p class="lede">A local LLM plans each investigation, six agents turn raw alerts into ranked incidents,
+            and a Critic sends any unproven claim back before an analyst sees it.</p>
+          <div class="cta">
+            <button class="run-btn" id="run-btn"><span class="run-txt">Run triage</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 L12 4 M6 4 H12 V10"/></svg></button>
+            <a class="setup-link" href="#setup">Set up the run</a>
+          </div>
+        </div>
+        <div class="pills" id="agent-pills" aria-hidden="true">
+          <span class="pill" data-agent="planner" style="--r:-14deg;--x:2%;--y:58%;--d:0">Planner</span>
+          <span class="pill" data-agent="research" style="--r:9deg;--x:20%;--y:44%;--d:1">Research</span>
+          <span class="pill" data-agent="executor" style="--r:-6deg;--x:44%;--y:52%;--d:2">Executor</span>
+          <span class="pill" data-agent="critic" style="--r:18deg;--x:60%;--y:16%;--d:3">Critic</span>
+          <span class="pill" data-agent="devagent" style="--r:-22deg;--x:6%;--y:4%;--d:4">Software dev</span>
+          <span class="pill" data-agent="automation" style="--r:4deg;--x:34%;--y:6%;--d:5">Automation</span>
+          <span class="pill" data-agent="approval" style="--r:-30deg;--x:72%;--y:52%;--d:6">Analyst</span>
+        </div>
+      </div>
+
+      <div class="frame-visual">
+        <canvas id="tunnel" aria-hidden="true"></canvas>
+        <p class="visual-caption" id="visual-caption">Waiting for a run</p>
+      </div>
+
+      <div class="frame-strip">
+        <div class="strip-cell"><b id="hs-alerts">0</b><span>alerts in the selected dataset</span></div>
+        <div class="strip-cell"><b id="hs-llm">Ollama</b><span>local model, no cloud calls</span></div>
+        <div class="strip-cell guarantee">
+          <svg class="seal" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 2 L24 7 L30 5 L31 11 L37 13 L34 19 L38 24 L32 27 L32 33 L26 33 L22 38 L18 34 L12 36 L10 30 L4 28 L7 22 L3 17 L9 14 L9 8 L15 8 Z"/>
+            <circle cx="20" cy="20" r="3.2"/>
+          </svg>
+          <span>Every claim cites its alerts, every score is recomputed, every sentence is fact-checked.</span>
+        </div>
+      </div>
+
+      <div class="frame-setup" id="setup">
+        <div class="setup-cell">
+          <label for="opt-dataset">Dataset</label>
+          <select id="opt-dataset"></select>
+          <input type="file" id="upload-file" accept=".json,application/json" class="hidden">
+          <small id="dataset-desc"></small>
+        </div>
+        <div class="setup-cell">
+          <span class="label" id="fault-label">Fault injection</span>
+          <div class="seg" id="seg-fault" role="group" aria-labelledby="fault-label">
+            <button data-v="" class="on">Off</button><button data-v="all">Critic loops</button><button data-v="persistent">Persistent</button>
+          </div>
+          <small id="fault-desc">Agents behave correctly.</small>
+        </div>
+        <div class="setup-cell switches">
+          <label class="switch"><input type="checkbox" id="opt-feed"><span class="track"></span>Live feed first</label>
+          <label class="switch"><input type="checkbox" id="opt-approval" checked><span class="track"></span>Analyst approves containment</label>
+          <label class="switch"><input type="checkbox" id="opt-memory" checked><span class="track"></span>Use analyst memory</label>
+        </div>
+        <div class="setup-cell">
+          <label for="opt-model">Language model</label>
+          <select id="opt-model"></select>
+          <small id="mode-desc">Checking Ollama…</small>
+        </div>
+      </div>
+    </section>
+
+    <p class="routing">Below 40 closes on its own. 40 to 69 goes to the analyst queue. 70 and above gets a playbook and a tested rule. The Critic retries twice, then hands the incident to a person.</p>
+
+    <!-- CONSOLE -->
+    <section class="view active" id="view-console">
+      <div class="panel graph-panel">
+        <div class="panel-head"><span>// ORCHESTRATION GRAPH · LIVE</span><span id="active-node" class="muted">awaiting run</span></div>
+        <svg id="pipeline" viewBox="0 0 1280 330" role="img" aria-label="Agent orchestration graph"></svg>
+        <div class="path-line" id="path-line"></div>
+      </div>
+
+      <div class="panel hidden" id="feed-panel">
+        <div class="panel-head"><span>// LIVE ALERT FEED</span><span id="feed-state" class="muted">connecting…</span></div>
+        <div class="feed-grid"><div class="term-body feed-ticker" id="feed-ticker"></div><div class="feed-cands" id="feed-cands"></div></div>
+      </div>
+
+      <div class="kpis" id="kpis">
+        <div class="kpi"><span>Alerts ingested</span><b data-k="alerts">0</b></div>
+        <div class="kpi"><span>Candidate incidents</span><b data-k="incidents">0</b></div>
+        <div class="kpi red"><span>Escalated</span><b data-k="escalate">0</b></div>
+        <div class="kpi amber"><span>Analyst queue</span><b data-k="queue">0</b></div>
+        <div class="kpi green"><span>Auto-closed</span><b data-k="closed">0</b></div>
+        <div class="kpi magenta"><span>Critic retries</span><b data-k="retries">0</b></div>
+        <div class="kpi cyan"><span>LLM rewrites</span><b data-k="rewrites">0</b></div>
+      </div>
+
+      <div class="console-grid">
+        <div class="panel terminal">
+          <div class="panel-head"><span>// AGENT TRACE</span><span id="trace-count" class="muted">0 events</span></div>
+          <div class="term-body" id="term"><div class="term-line dim">$ soc-agent --await-run_</div></div>
+        </div>
+        <div class="panel critic-panel">
+          <div class="panel-head"><span>// CRITIC FEEDBACK LOOP</span><span id="critic-state" class="muted">no verdicts yet</span></div>
+          <div id="critic-loop" class="critic-loop"><p class="muted center">Turn on fault injection to watch the Critic reject an agent's work and send it back.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-incidents"></section>
+    <section class="view" id="view-detail"></section>
+    <section class="view" id="view-attack"></section>
+    <section class="view" id="view-response"></section>
+    <section class="view" id="view-reports"></section>
+    <section class="view" id="view-eval"></section>
+    <section class="view" id="view-benchmark"></section>
+    <section class="view" id="view-memory"></section>
+    <section class="view" id="view-ask"></section>
+  </main>
+
+  <footer class="foot">CA-3 agentic AI proof of concept, SIT Pune. Synthetic data and mock integrations: nothing here touches a real system.</footer>
+
+  <div class="modal hidden" id="modal" role="dialog" aria-modal="true"><div class="modal-card" id="modal-card"></div></div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="/static/app.js?v=7"></script>
+</body>
+</html>
